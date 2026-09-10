@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { ProfilePanel } from './ProfilePanel'
 import { VisualBackground } from '../visual/VisualBackground'
 import './home.css'
@@ -10,6 +11,8 @@ const navItems = [
 ] as const
 
 export function Hero() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <section className="hero-stage" id="index" aria-labelledby="hero-title">
       <header className="hero-header">
@@ -17,8 +20,12 @@ export function Hero() {
         <nav className="hero-header__nav" aria-label="Primary navigation">
           {navItems.map(([index, label, href]) => <a href={href} key={href}><i>{index}</i>{label}</a>)}
         </nav>
-        <button className="hero-header__menu" type="button" aria-label="Open menu">Menu</button>
+        <button className="hero-header__menu" type="button" aria-expanded={isMenuOpen} aria-controls="mobile-index" onClick={() => setIsMenuOpen((isOpen) => !isOpen)}>{isMenuOpen ? 'Close' : 'Menu'}</button>
       </header>
+
+      <nav className="hero-header__mobile-nav" id="mobile-index" aria-label="Mobile navigation" hidden={!isMenuOpen}>
+        {navItems.map(([index, label, href]) => <a href={href} key={href} onClick={() => setIsMenuOpen(false)}><i>{index}</i>{label}</a>)}
+      </nav>
 
       <p className="hero-label">Personal orbit / 2026</p>
       <h1 className="hero-title hero-title--back" id="hero-title">Xuan</h1>
