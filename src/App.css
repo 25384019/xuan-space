@@ -1,0 +1,20 @@
+main {
+  display: grid;
+  min-height: 100svh;
+  place-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+p {
+  color: #64748b;
+}
