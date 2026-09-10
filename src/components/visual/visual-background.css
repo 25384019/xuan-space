@@ -1,3 +1,3 @@
-.visual-background { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: radial-gradient(circle at 70% 20%, rgba(83, 166, 145, 0.18), transparent 34%), var(--color-bg); }
+.visual-background { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: auto; touch-action: pan-y; background: radial-gradient(circle at 70% 20%, rgba(83, 166, 145, 0.18), transparent 34%), var(--color-bg); }
 .visual-background > * { width: 100%; height: 100%; }
 .visual-background--fallback::after { position: absolute; inset: 0; content: ''; background: linear-gradient(135deg, transparent 42%, rgba(159, 247, 209, 0.04) 42%, transparent 43%); }
