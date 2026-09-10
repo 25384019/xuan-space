@@ -1,13 +1,3 @@
 export function ProfilePanel() {
-  return (
-    <article id="about" className="profile-panel">
-      <div className="profile-panel__mark" aria-hidden="true">XS</div>
-      <div>
-        <p className="profile-panel__eyebrow">Independent digital space</p>
-        <h2>Xuan Space</h2>
-        <p className="profile-panel__copy">A quiet corner for ideas, experiments, and things worth keeping.</p>
-      </div>
-      <a className="profile-panel__action" href="#about">Explore the space <span aria-hidden="true">↗</span></a>
-    </article>
-  )
+  return <div className="hero-meta" id="profile"><p className="hero-meta__index">01 / Profile</p><p className="hero-meta__name">DZX</p><p className="hero-meta__role">Computer Science</p><p className="hero-meta__tags">AI · Music · Fitness · Photography</p></div>
 }

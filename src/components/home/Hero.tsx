@@ -2,14 +2,9 @@ import { ProfilePanel } from './ProfilePanel'
 import './home.css'
 
 export function Hero() {
-  return (
-    <section className="hero" aria-labelledby="hero-title">
-      <div className="hero__intro">
-        <p className="hero__eyebrow"><span aria-hidden="true">✦</span> Personal workspace / 2026</p>
-        <h1 id="hero-title">Make room<br /><em>for wonder.</em></h1>
-        <p className="hero__lede">Notes, visuals, and small digital worlds gathered in one quiet place.</p>
-      </div>
-      <ProfilePanel />
-    </section>
-  )
+  return <section className="hero-stage" aria-labelledby="hero-title">
+    <header className="hero-header"><a className="hero-header__brand" href="/" aria-label="Xuan Space home"><span aria-hidden="true">×</span>Xuan Space</a><nav className="hero-header__nav" aria-label="Primary navigation"><a href="#profile">Index</a><a href="#profile">Profile</a><a href="#work">Work</a><a href="#links">Links</a></nav><button className="hero-header__menu" type="button" aria-label="Open menu">Menu</button></header>
+    <div className="hero-copy"><p className="hero-copy__eyebrow">Personal space / 2026</p><h1 id="hero-title"><span>Xuan</span><em>Space</em></h1><p className="hero-copy__lede">A living index of ideas, images, and small digital worlds.</p></div>
+    <ProfilePanel /><a className="scroll-indicator" href="#profile"><span>Scroll to wander</span><i aria-hidden="true">↓</i></a>
+  </section>
 }

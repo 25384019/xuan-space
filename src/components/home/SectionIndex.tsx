@@ -1,0 +1,2 @@
+const sections = [['02', 'Interests', 'AI, music, movement, and the visual details between them.'], ['03', 'Work', 'Experiments in code, systems, and making things feel alive.'], ['04', 'Links', 'A small constellation of places to find the work in progress.']] as const
+export function SectionIndex() { return <div className="section-index">{sections.map(([index, title, copy]) => <section className="quiet-section" id={title.toLowerCase()} key={index}><p className="quiet-section__index">{index}</p><h2>{title}</h2><p>{copy}</p></section>)}</div> }
