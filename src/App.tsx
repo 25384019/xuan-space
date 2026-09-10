@@ -1,10 +1,13 @@
-import './App.css'
+import { Hero } from './components/home/Hero'
+import { VisualBackground } from './components/visual/VisualBackground'
 
 function App() {
   return (
-    <main>
-      <h1>Xuan Space</h1>
-      <p>Foundation is ready.</p>
+    <main className="page-shell">
+      <VisualBackground />
+      <div className="page-shell__content">
+        <Hero />
+      </div>
     </main>
   )
 }
