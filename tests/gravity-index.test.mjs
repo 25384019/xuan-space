@@ -5,6 +5,7 @@ import test from 'node:test'
 const visualBackgroundPath = new URL('../src/components/visual/VisualBackground.tsx', import.meta.url)
 const heroPath = new URL('../src/components/home/Hero.tsx', import.meta.url)
 const profileDataPath = new URL('../src/data/profile.ts', import.meta.url)
+const packagePath = new URL('../package.json', import.meta.url)
 
 test('uses the single OrbitalSphereBackground Community component', async () => {
   const source = await readFile(visualBackgroundPath, 'utf8')
@@ -29,4 +30,10 @@ test('keeps homepage identity and archive content in one profile data module', a
   assert.match(source, /export const navigation/)
   assert.match(source, /export const interests/)
   assert.match(source, /export const workArchive/)
+})
+
+test('previews the built Worker with its generated static asset configuration', async () => {
+  const packageJson = JSON.parse(await readFile(packagePath, 'utf8'))
+
+  assert.match(packageJson.scripts.preview, /wrangler dev --config dist\/xuan_space_foundation\/wrangler\.json/)
 })

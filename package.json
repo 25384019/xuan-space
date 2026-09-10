@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "npm run build && vite preview",
+    "preview": "npm run build && wrangler dev --config dist/xuan_space_foundation/wrangler.json",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types"
   },
