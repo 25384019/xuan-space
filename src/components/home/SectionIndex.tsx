@@ -1,16 +1,5 @@
-const interests = [
-  ['01', 'Computer Science', '100%'],
-  ['02', 'AI', '54%'],
-  ['03', 'Music', '86%'],
-  ['04', 'Fitness', '62%'],
-  ['05', 'Photography', '74%'],
-] as const
-
-const work = [
-  ['2026', 'Xuan Space', 'Web experience'],
-  ['2026', 'XiaoZhaiOS', 'AI system'],
-  ['—', 'In formation', 'Personal archive'],
-] as const
+import type { CSSProperties } from 'react'
+import { interests, profile, workArchive } from '../../data/profile'
 
 export function SectionIndex() {
   return (
@@ -18,7 +7,7 @@ export function SectionIndex() {
       <section className="profile-story" id="profile" aria-labelledby="profile-heading">
         <p className="section-kicker">01 / Profile</p>
         <h2 id="profile-heading">A small system,<br /><em>still becoming.</em></h2>
-        <div className="profile-story__detail"><span>DZX</span><span>Computer Science</span><p>A quiet introduction held lightly: a place to collect what keeps pulling attention back.</p></div>
+        <div className="profile-story__detail"><span>{profile.name}</span><span>{profile.role}</span><p>{profile.profileStory}</p></div>
       </section>
 
       <section className="interests-index" id="interests" aria-labelledby="interests-heading">
@@ -28,7 +17,7 @@ export function SectionIndex() {
 
       <section className="work-archive" id="work" aria-labelledby="work-heading">
         <div className="section-heading"><p className="section-kicker">03 / Work</p><h2 id="work-heading">Archive</h2></div>
-        <div className="archive-list" role="list">{work.map(([year, title, type]) => <div role="listitem" key={title}><span>{year}</span><strong>{title}</strong><em>{type}</em></div>)}</div>
+        <div className="archive-list" role="list">{workArchive.map(([year, title, type]) => <div role="listitem" key={title}><span>{year}</span><strong>{title}</strong><em>{type}</em></div>)}</div>
       </section>
 
       <section className="links-exit" id="links" aria-labelledby="links-heading">
@@ -39,4 +28,3 @@ export function SectionIndex() {
     </div>
   )
 }
-import type { CSSProperties } from 'react'
